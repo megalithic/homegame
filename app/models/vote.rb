@@ -7,6 +7,7 @@
 #  selected_date :datetime
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
+#  week_number   :integer
 #
 
 class Vote < ActiveRecord::Base

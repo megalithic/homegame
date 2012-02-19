@@ -3,12 +3,12 @@
     %h2
       Ladies and Gents,
     %p
-      -if votes > 0
-        It looks like we got ourselves a <strong><em>poker game</em></strong> for
+      -if enough_votes?
+        <strong><em>Whoo buddy</em></strong>, it looks like we got ourselves a game for
         %span.label.label-important= current_game_date
       -else
-        <strong>Unfortunately</strong> we haven't had enough folks to pick a date for the week of
-        =game_week_date
+        <strong><em>No game this week</em></strong>, we haven't had enough folks to vote on a date for the week of
+        %strong= game_week_date
 
     =link_to 'More Info', about_path, :class => "btn btn-inverse btn-large"
 

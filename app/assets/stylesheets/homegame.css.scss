@@ -46,13 +46,13 @@ h1 {
     transition:color .25s ease-in;
   }
   a:hover {
-    color:rgba(149,59,57,1);
+    color:#777;
     border:0;
   }
 }
 
 h2 {
-  margin:0;
+  margin:0 0 5px;
   border-bottom:1px dotted #ddd;
   text-shadow:1px 0 1px #eee;
   span {
@@ -108,6 +108,10 @@ header {
   }
 }
 
+#main {
+  border-top:1px solid rgba(255,255,255,.15);
+}
+
 .row {margin:15px 0 0;}
 
 .nav {
@@ -118,12 +122,7 @@ header {
 
 .content {
   background:transparent; //C1C5B7
-  background-image:
-    -webkit-radial-gradient(center top , ellipse farthest-side, rgba(193,197,183,0.75), rgba(193,197,183,0) 110%);
-  // background-image:
-  //   -webkit-radial-gradient(center top , ellipse farthest-side, rgba(193, 197, 183, 0.25), rgba(193, 197, 183, 0) 75%),
-  //   -webkit-radial-gradient(center top , ellipse farthest-side, rgba(180, 218, 244, 0.25), rgba(180, 218, 244, 0)),
-  //   -webkit-radial-gradient(center top , ellipse farthest-side, rgba(180, 218, 244, 0.3), rgba(180, 218, 244, 0));
+  background-image:-webkit-radial-gradient(center top , ellipse farthest-side, rgba(193,197,183,0.75), rgba(193,197,183,0) 110%);
   background-repeat: no-repeat;
   background-size: 100% 5px;//, 100% 50px, 100% 100%;
   height:100%;
@@ -183,10 +182,19 @@ header {
       width:100%;
       float:none;
       background:rgba(255,255,255,.3);
+      h3 {
+        padding:10px 30px;
+      }
+      form {
+        padding:15px 30px;
+      }
     }
     .about {
+      h3 {
+        padding:10px 30px;
+      }
       div {
-        padding:30px;
+        padding:15px 30px;
         border-top:1px solid #eee;
       }
     }

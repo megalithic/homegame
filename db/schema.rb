@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218215944) do
+ActiveRecord::Schema.define(:version => 20120219214727) do
 
   create_table "games", :force => true do |t|
     t.integer  "vote_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120218215944) do
     t.datetime "selected_date"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "week_number"
   end
 
 end

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_player, :player_signed_in?, :player_signed_out?, :player_voted?, :votes
+  helper_method :current_player, :player_signed_in?, :player_signed_out?, :player_voted?, :enough_votes?
 
   def current_player
     @current_player ||= Player.find(session[:player_id]) if session[:player_id]
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def enough_votes?
     date = Date.today.beginning_of_week + 7
-    game = Game.find_by_week_number(date.strftime("%W"))
-    votes_for_week_number = Vote.p
+    votes_for_week = Vote.find_all_by_week_number(date.strftime("%W"))
+    enough_votes = votes_for_week.count >= 6
   end
 end

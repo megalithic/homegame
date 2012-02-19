@@ -15,4 +15,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap/alert
 //= require knockout
-//= require_tree .
+//= require homegame
