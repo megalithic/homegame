@@ -1,0 +1,36 @@
+!!! 5
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
+  %head
+    %meta{ :charset => "utf-8" }/
+    %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
+    %title Homega.me
+    %meta{ :name => "description", :content => "" }/
+    %meta{ :name => "author", :content => "" }/
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }/
+    = stylesheet_link_tag "application"
+    = csrf_meta_tags
+    = javascript_include_tag "modernizr"
+
+  %body
+    #container.container
+      %header{ :role => 'banner' }
+        %h1
+          = link_to "Home Ga.me", root_url
+        = render :partial => "common/player_utils"
+
+      #main{ :role => 'main' }
+        = render :partial => "common/notifications"
+        = yield
+
+      %footer
+
+    / - if Rails.env.development?
+    /   .debug
+    /     = debug(params)
+
+  = javascript_include_tag "application"

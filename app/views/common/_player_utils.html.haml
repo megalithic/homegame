@@ -1,0 +1,10 @@
+-if current_player
+  %dl.span3
+    %dt
+      Welcome,
+      %strong= current_player.first_name.capitalize
+    -if current_player.username == "megalithic"
+      %dd
+        =link_to "Add game", {:controller => "games", :action => "new"}
+    %dd
+      =link_to "Log out", {:controller => "sessions", :action => "destroy"}

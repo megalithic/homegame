@@ -1,0 +1,25 @@
+%section.row.content
+  .hero-unit
+    %h2
+      Ladies and Gents,
+    %p
+      -if votes > 0
+        It looks like we got ourselves a <strong><em>poker game</em></strong> for
+        %span.label.label-important= current_game_date
+      -else
+        <strong>Unfortunately</strong> we haven't had enough folks to pick a date for the week of
+        =game_week_date
+
+    =link_to 'More Info', about_path, :class => "btn btn-inverse btn-large"
+
+    / =link_to '', {:controller => "about", :action => "index", :class => "btn btn-info btn-large", :title => "Get more info on the game, driving directions, and how to use this site."} do
+    /   %i.icon-question-sign.icon-white
+    /   More Info
+
+  .meat_and_potatoes
+    -if current_player
+      =render :partial => "common/vote_form"
+    -else
+      =render :partial => "common/login"
+
+    =render :partial => "common/vote_results"

@@ -1,0 +1,40 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Homega.me</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "modernizr" %>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Poker Time</h1>
+    </header>
+    <%= render :partial => "common/notifications" %>
+    <%= yield %>
+  </div>
+
+  <% if Rails.env.development? %>
+    <div class="debug">
+      <%= debug(params) %>
+    </div>
+  <% end %>
+
+  <%= javascript_include_tag "application" %>
+
+  <!--[if lt IE 7 ]>
+    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

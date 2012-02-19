@@ -1,0 +1,222 @@
+@import "twitter/bootstrap";
+@import "twitter/bootstrap/responsive";
+// @import url(http://fonts.googleapis.com/css?family=Knewave|Lilita+One|Condiment|Yellowtail|Sarina|Mr+Bedfort|Sonsie+One|Emblema+One|Marck+Script|Fugaz+One|Monofett|Norican|Kaushan+Script|Damion|Bangers|Righteous|Kranky|Luckiest+Guy|Nothing+You+Could+Do|Covered+By+Your+Grace|Bowlby+One+SC|Rock+Salt|Allan:700|Miltonian+Tattoo);
+@import url(http://fonts.googleapis.com/css?family=Bangers);
+
+body {
+  background:#fff url('/images/bg-400-paper.jpg') repeat 0 0;
+}
+
+.debug {
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+
+a, a:link, a:active, a:visited {
+  text-decoration:none;
+  color:rgba(149,59,57,1);
+  border-bottom:1px dotted rgba(149,59,57,1);
+  -webkit-transition:color .25s ease-in;
+  -moz-transition:color .25s ease-in;
+  -o-transition:color .25s ease-in;
+  transition:color .25s ease-in;
+}
+small a {color:rgba(149,59,57,1) !important;}
+a:hover {
+  text-decoration:none;
+  color:#777;
+  border-bottom:1px dotted #777;
+}
+
+h1 {
+  display:inline-block;
+  font-family:'Bangers', sans-serif;
+  padding-right:135px;
+  font-size:46px;
+  margin:0;
+  background:transparent url('/images/suits.png') no-repeat 100% 50%;
+  a, a:link, a:visited {
+    color:#000;
+    text-decoration:none;
+    border:0;
+    -webkit-transition:color .25s ease-in;
+    -moz-transition:color .25s ease-in;
+    -o-transition:color .25s ease-in;
+    transition:color .25s ease-in;
+  }
+  a:hover {
+    color:rgba(149,59,57,1);
+    border:0;
+  }
+}
+
+h2 {
+  margin:0;
+  border-bottom:1px dotted #ddd;
+  text-shadow:1px 0 1px #eee;
+  span {
+    font-size:80%;
+  }
+}
+
+h3 {
+  border-bottom:1px solid rgba(149, 59, 57, .1);
+  padding:0 10px 5px;
+}
+
+.container {
+  position:relative;
+  .alert-block {
+    position:absolute;
+    left:50%;
+    top:5px;
+    margin-left:-150px;
+    padding:0;
+    min-width:300px;
+    .close {
+      line-height:30px;
+      text-decoration:none;
+      margin-right:10px;
+    }
+  }
+}
+
+header {
+  border-bottom:1px solid rgba(193, 197, 183, 0.4);
+  padding:10px 0;
+  margin:0;
+  .span3 {
+    float:right;
+    margin:0;
+    padding:0;
+    line-height:40px;
+    text-align:right;
+    dt, dd {
+      display:inline-block;
+    }
+    dt {
+      strong {
+        font-style:italic;
+      }
+    }
+    dd:last-child {
+      border-left:1px dotted #bbb;
+      padding-left:10px;
+      margin-left:5px;
+    }
+  }
+}
+
+.row {margin:15px 0 0;}
+
+.nav {
+  border-bottom:1px solid rgba(193, 197, 183, 0.4);
+  padding:10px 0;
+  margin:0;
+}
+
+.content {
+  background:transparent; //C1C5B7
+  background-image:
+    -webkit-radial-gradient(center top , ellipse farthest-side, rgba(193,197,183,0.75), rgba(193,197,183,0) 110%);
+  // background-image:
+  //   -webkit-radial-gradient(center top , ellipse farthest-side, rgba(193, 197, 183, 0.25), rgba(193, 197, 183, 0) 75%),
+  //   -webkit-radial-gradient(center top , ellipse farthest-side, rgba(180, 218, 244, 0.25), rgba(180, 218, 244, 0)),
+  //   -webkit-radial-gradient(center top , ellipse farthest-side, rgba(180, 218, 244, 0.3), rgba(180, 218, 244, 0));
+  background-repeat: no-repeat;
+  background-size: 100% 5px;//, 100% 50px, 100% 100%;
+  height:100%;
+  margin:0;
+  padding:15px 0;
+
+  .hero-unit {
+    padding:30px 40px;
+    margin-bottom:15px;
+    background:rgba(255,255,255,0.3);
+    border:1px solid rgba(193, 197, 183, 0.65);
+    -moz-box-shadow:inset 0 0 30px rgba(0,0,0,.1);
+    -webkit-box-shadow:inset 0 0 30px rgba(0,0,0,.1);
+    box-shadow:inset 0 0 30px rgba(0,0,0,.1);
+    h2 {
+      margin-left:0;
+      color:#222;
+      font-size:32px;
+      font-family:helvetica;
+    }
+    p {
+      font-size:22px;
+      span.label-important {
+        font-size:22px;
+        padding:5px 10px;
+      }
+    }
+    .btn-inverse {
+      margin-top:10px;
+      color:#fff;
+      text-decoration:none;
+    }
+    .btn-inverse:before {
+      content:"♠ ";
+      font-size:18px;
+    }
+  }
+
+  .meat_and_potatoes {
+    .login_form, .register_form, .vote_form, .vote_results, .about {
+      float:left;
+      width:50%;
+      padding:10px 0;
+      form, aside {
+        padding:0 10px;
+        border-top:1px solid #eee;
+      }
+      aside {
+        padding-top:10px;
+      }
+    }
+    .vote_results {
+      background:rgba(149,59,57,.1);
+      float:right;
+    }
+    .register_form, .about {
+      width:100%;
+      float:none;
+      background:rgba(255,255,255,.3);
+    }
+    .about {
+      div {
+        padding:30px;
+        border-top:1px solid #eee;
+      }
+    }
+  }
+}
+
+fieldset {
+  legend {
+    font-size:100%;
+    font-style:italic;
+    color:#777;
+    border:0;
+  }
+  legend:before {
+    color:#f00;
+    content: "♦ ";
+  }
+  label {
+    margin:5px 0;
+  }
+  .date_options {
+    margin:0;
+  }
+}
+
+.actions {
+  margin:10px 0;
+}
+.alt-action {
+  margin:5px 0 5px 10px;
+  vertical-align: middle;
+  font-style:italic;
+}

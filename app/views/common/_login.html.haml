@@ -1,0 +1,12 @@
+.login_form
+  %h3 Log in and get to voting on our game day
+
+  = twitter_bootstrap_form_for :session, :url => sessions_path, :role => "form" do |f|
+    = f.inputs 'Note: All fields are required.' do
+      = f.text_field :username, :required => true
+      = f.password_field :password, :required => true
+    = f.actions do
+      = f.submit 'Log in', :class => "btn btn-success"
+      %span.alt-action
+        Not registered?
+        = link_to "Sign up!", register_path

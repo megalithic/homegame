@@ -1,0 +1,18 @@
+%section.row.content
+  .meat_and_potatoes
+    .register_form
+      %h3 You want to win some money right?<br /><small>Well, get to registering then!</small>
+
+      = twitter_bootstrap_form_for @player do |f|
+        = f.inputs "Note: All fields are required" do
+          = f.text_field :first_name, :required => true
+          = f.text_field :last_name, :required => true
+          = f.text_field :username, :required => true
+          = f.email_field :email, :required => true, :placeholder => "me@example.com"
+          = f.password_field :password, :required => true
+          = f.password_field :password_confirmation, :required => true
+        = f.actions do
+          = f.submit 'Register', :class => "btn btn-success"
+          %span.alt-action
+            Already registered?
+            = link_to "Log in!", root_url

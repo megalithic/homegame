@@ -1,0 +1,8 @@
+.vote_form
+  %h3 Get your vote in
+
+  %form{:id => "vote_form", :role => "form"}
+    %fieldset
+      %legend Note: You may vote only once per week
+      %select.date_options{:data => {:bind => "options: dates"}}
+      %button.btn.btn-success{:data => {:bind => "click: submitVote"}} Vote!
