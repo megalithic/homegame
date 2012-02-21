@@ -4,5 +4,21 @@
     =game_week_date
 
   %aside
-    - if !player_voted?
-      Log in and get to voting!
+    - unless player_voted?
+      %p You want to play? Well then, <strong>pick a day!</strong>
+
+    %h4
+      We're getting there,
+      =pluralize(@votes.count, 'person')
+      want to play
+
+    - unless !@votes.any?
+      %ul
+        - @votes.each do |vote|
+          %li
+            %i.icon-ok
+            - full_name = player_by_id(vote.player_id).full_name
+            = abbr_full_name(full_name) unless full_name.nil?
+            wants to play on
+            - date = vote.selected_date
+            = date.strftime("%A (%b. #{date.day.ordinalize})")

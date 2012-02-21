@@ -1,7 +1,7 @@
 class MainController < ApplicationController
   def index
-  end
-
-  def new
+    @player = Player.new
+    @vote = Vote.new
+    @votes = Vote.all
   end
 end

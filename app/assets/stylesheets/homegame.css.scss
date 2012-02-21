@@ -1,6 +1,5 @@
 @import "twitter/bootstrap";
 @import "twitter/bootstrap/responsive";
-// @import url(http://fonts.googleapis.com/css?family=Knewave|Lilita+One|Condiment|Yellowtail|Sarina|Mr+Bedfort|Sonsie+One|Emblema+One|Marck+Script|Fugaz+One|Monofett|Norican|Kaushan+Script|Damion|Bangers|Righteous|Kranky|Luckiest+Guy|Nothing+You+Could+Do|Covered+By+Your+Grace|Bowlby+One+SC|Rock+Salt|Allan:700|Miltonian+Tattoo);
 @import url(http://fonts.googleapis.com/css?family=Bangers);
 
 body {
@@ -35,6 +34,7 @@ h1 {
   padding-right:135px;
   font-size:46px;
   margin:0;
+  text-shadow:1px 1px 2px #888, -1px -1px 2px #ddd;
   background:transparent url('/images/suits.png') no-repeat 100% 50%;
   a, a:link, a:visited {
     color:#000;
@@ -46,7 +46,7 @@ h1 {
     transition:color .25s ease-in;
   }
   a:hover {
-    color:#777;
+    color:#333;
     border:0;
   }
 }
@@ -54,7 +54,8 @@ h1 {
 h2 {
   margin:0 0 5px;
   border-bottom:1px dotted #ddd;
-  text-shadow:1px 0 1px #eee;
+  color:rgba(0,0,0,.85);
+  text-shadow:1px 1px 1px #fff;
   span {
     font-size:80%;
   }
@@ -83,8 +84,8 @@ h3 {
 }
 
 header {
-  border-bottom:1px solid rgba(193, 197, 183, 0.4);
-  padding:10px 0;
+  // border-bottom:1px solid rgba(193, 197, 183, 0.4);
+  padding:10px 0 0;
   margin:0;
   .span3 {
     float:right;
@@ -109,7 +110,7 @@ header {
 }
 
 #main {
-  border-top:1px solid rgba(255,255,255,.15);
+  // border-top:1px solid rgba(255,255,255,.15);
 }
 
 .row {margin:15px 0 0;}
@@ -121,14 +122,9 @@ header {
 }
 
 .content {
-  background:transparent; //C1C5B7
-  background-image:-webkit-radial-gradient(center top , ellipse farthest-side, rgba(193,197,183,0.75), rgba(193,197,183,0) 110%);
-  background-repeat: no-repeat;
-  background-size: 100% 5px;//, 100% 50px, 100% 100%;
-  height:100%;
   margin:0;
-  padding:15px 0;
-
+  padding:15px 0 0;
+  // border-bottom:1px solid rgba(255,255,255,0.60);
   .hero-unit {
     padding:30px 40px;
     margin-bottom:15px;
@@ -139,7 +135,6 @@ header {
     box-shadow:inset 0 0 30px rgba(0,0,0,.1);
     h2 {
       margin-left:0;
-      color:#222;
       font-size:32px;
       font-family:helvetica;
     }
@@ -164,7 +159,7 @@ header {
   .meat_and_potatoes {
     .login_form, .register_form, .vote_form, .vote_results, .about {
       float:left;
-      width:50%;
+      width:33%;
       padding:10px 0;
       form, aside {
         padding:0 10px;
@@ -177,10 +172,19 @@ header {
     .vote_results {
       background:rgba(149,59,57,.1);
       float:right;
+      ul {
+        margin:10px 0;
+        padding:0;
+        list-style:none;
+        li {
+          margin:5px 0;
+        }
+      }
     }
     .register_form, .about {
       width:100%;
       float:none;
+      margin-bottom:-25px;
       background:rgba(255,255,255,.3);
       h3 {
         padding:10px 30px;
@@ -190,13 +194,46 @@ header {
       }
     }
     .about {
+      float:left;
       h3 {
         padding:10px 30px;
       }
-      div {
+      article {
         padding:15px 30px;
         border-top:1px solid #eee;
       }
+      .main {
+        float:left;
+        width:600px;
+      }
+      aside {
+        border:0;
+        padding:0;
+        float:right;
+      }
+    }
+  }
+}
+
+footer {
+  margin-top:25px;
+  clear:both;
+  background:transparent;
+  background-image:
+    -webkit-radial-gradient(center top , ellipse farthest-side, rgba(193,197,183,0.9), rgba(193,197,183,0) 100%),
+    url('/images/megalithic_footer_updated-flipped.png');
+  background-repeat: no-repeat;
+  background-size: 100% 15px, auto auto;
+  background-position:0 0, 50% 0;
+  height:100%;
+  border-top:1px solid rgba(255,255,255,0.5);
+  .megalithic_footer {
+    border-top:1px solid rgba(193, 197, 183, 0.85);
+    padding:85px 0 0;
+    .copyright {
+      text-align:center;
+      color:rgba(149, 59, 57, .35);
+      text-shadow:1px 1px 0px rgba(255,255,225,0.5);
     }
   }
 }

@@ -1,25 +1,34 @@
-%section.row.content
+%section.row.content.home
   .hero-unit
     %h2
       Ladies and Gents,
-    %p
-      -if enough_votes?
-        <strong><em>Whoo buddy</em></strong>, it looks like we got ourselves a game for
+
+    -if enough_votes?
+      %p
+        <strong><em>Whoo buddy!</em></strong> It looks like we got ourselves a game for
         %span.label.label-important= current_game_date
-      -else
-        <strong><em>No game this week</em></strong>, we haven't had enough folks to vote on a date for the week of
-        %strong= game_week_date
+      %p
+        The
+        =current_player_count
+        should get ready to shuffle up and deal!
+    -else
+      %p
+        Unfortunately, <strong><em>no game this week</em></strong>, we haven't had enough folks to vote on a date for the week of
+        %strong= "#{game_week_date}."
+      %p
+        <em>However</em>, there are still
+        %strong= (10 - current_vote_count) unless current_vote_count >= 10
+        spots left, and we only need
+        %strong= (6 - current_vote_count) unless current_vote_count >= 6
+        more to have a decent game.
 
     =link_to 'More Info', about_path, :class => "btn btn-inverse btn-large"
-
-    / =link_to '', {:controller => "about", :action => "index", :class => "btn btn-info btn-large", :title => "Get more info on the game, driving directions, and how to use this site."} do
-    /   %i.icon-question-sign.icon-white
-    /   More Info
 
   .meat_and_potatoes
     -if current_player
       =render :partial => "common/vote_form"
+      =render :partial => "common/chat"
     -else
       =render :partial => "common/login"
 
-    =render :partial => "common/vote_results"
+    =render :partial => "common/vote_results", :locals => {:votes => @votes}

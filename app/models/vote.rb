@@ -11,13 +11,14 @@
 #
 
 class Vote < ActiveRecord::Base
-  attr_accessible :selected_date, :player_id
+  attr_accessible :selected_date, :player_id, :week_number
+  has_many :players
+  validates :selected_date, :presence => true
 
   def self.player_voted(player_id, week_number)
-    selected_date = Vote.find(:first, :conditions => ["player_id = ? AND strftime('%W', selected_date) = ?", player_id, week_number])
-    if !selected_date.nil?
-      selected_week_number = selected_date.strftime("%W")
-      @voted = (selected_week_number == week_number)
+    vote = Vote.first(:conditions => ["player_id = ? AND week_number = ?", player_id, week_number])
+    unless vote.nil?
+      return vote[:selected_date].strftime("%W") == week_number
     end
   end
 end

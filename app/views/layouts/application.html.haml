@@ -28,6 +28,12 @@
         = yield
 
       %footer
+        %div.megalithic_footer
+          %p.copyright
+            Brought to you by<br /><strong>megalithic productions</strong>
+            &copy;
+            - date = Date.current
+            = date.strftime("%Y")
 
     / - if Rails.env.development?
     /   .debug
