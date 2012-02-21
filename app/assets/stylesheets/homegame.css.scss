@@ -79,6 +79,7 @@ h3 {
       line-height:30px;
       text-decoration:none;
       margin-right:10px;
+      border:0;
     }
   }
 }
@@ -176,13 +177,15 @@ header {
       float:left;
       padding:11px 0;
       margin:0 10px;
-      min-height:250px;
       ul {
         margin:10px 0;
         padding:0;
         list-style:none;
         li {
           margin:5px 0;
+        }
+        #my_vote {
+          color:rgba(149,59,57,1);
         }
       }
     }
@@ -253,7 +256,7 @@ footer {
     .sundries {
       text-align:right;
       color:#888;
-      padding-top:30px;
+      padding-top:20px;
     }
   }
 }
@@ -272,6 +275,12 @@ fieldset {
   }
   label {
     margin:5px 0;
+  }
+  legend + .control-group {
+    margin-top:5px;
+  }
+  .control-group {
+    margin-bottom:5px;
   }
   .date_options {
     margin:0;

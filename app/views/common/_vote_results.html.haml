@@ -15,7 +15,7 @@
     - unless !@votes.any?
       %ul
         - @votes.each do |vote|
-          %li
+          %li{:id => vote.player_id == session[:player_id] ? "my_vote" : ""}
             %i.icon-ok
             - full_name = player_by_id(vote.player_id).full_name
             = abbr_full_name(full_name) unless full_name.nil?
