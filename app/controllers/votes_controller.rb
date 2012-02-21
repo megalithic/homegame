@@ -23,4 +23,9 @@ class VotesController < ApplicationController
       end
     end
   end
+
+  def destroy
+    puts "destroyed"
+    redirect_to root_url, :notice => "You are no longer playing"
+  end
 end

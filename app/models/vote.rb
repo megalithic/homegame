@@ -13,7 +13,6 @@
 class Vote < ActiveRecord::Base
   attr_accessible :selected_date, :player_id, :week_number
   has_many :players
-  validates :selected_date, :presence => true
 
   def self.player_voted(player_id, week_number)
     vote = Vote.first(:conditions => ["player_id = ? AND week_number = ?", player_id, week_number])

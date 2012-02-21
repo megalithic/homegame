@@ -13,7 +13,7 @@
         should get ready to shuffle up and deal!
     -else
       %p
-        Unfortunately, <strong><em>no game this week</em></strong>, we haven't had enough folks to vote on a date for the week of
+        Unfortunately, <strong><em>no game so far</em></strong>; not enough folks have voted on a date for the week of
         %strong= "#{game_week_date}."
       %p
         <em>However</em>, there are still
@@ -27,8 +27,9 @@
   .meat_and_potatoes
     -if current_player
       =render :partial => "common/vote_form"
-      =render :partial => "common/chat"
     -else
       =render :partial => "common/login"
 
     =render :partial => "common/vote_results", :locals => {:votes => @votes}
+
+    =render :partial => "common/chat" unless !current_player

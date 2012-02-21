@@ -8,7 +8,7 @@ gem 'sqlite3'                 #sqlite support
 gem 'rails-boilerplate'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'simple_form'
-gem 'twitter_bootstrap_form_for'
+gem 'twitter_bootstrap_form_for', :git => "https://github.com/tzeskimo/twitter_bootstrap_form_for.git"
 gem 'bootstrap-sass-rails'
 gem 'haml-rails'
 # gem 'whenever'          #cron util
@@ -17,6 +17,7 @@ gem 'haml-rails'
 # gem 'acts_as_api'       #api gem
 gem 'powder'              #handy gem for pow server
 gem 'knockout-rails', "~> 1.0.1"
+gem 'heroku'
 # gem 'backbone-on-rails'     #backbone.js for rails
 
 group :assets do

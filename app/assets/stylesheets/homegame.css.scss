@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-  margin:0 0 5px;
+  margin:0 0 10px;
   border-bottom:1px dotted #ddd;
   color:rgba(0,0,0,.85);
   text-shadow:1px 1px 1px #fff;
@@ -62,7 +62,7 @@ h2 {
 }
 
 h3 {
-  border-bottom:1px solid rgba(149, 59, 57, .1);
+  border-bottom:1px solid rgba(149, 59, 57, .15);
   padding:0 20px 5px;
 }
 
@@ -83,9 +83,10 @@ h3 {
   }
 }
 
+
+// Our header
 header {
-  // border-bottom:1px solid rgba(193, 197, 183, 0.4);
-  padding:10px 0 0;
+  padding:10px 5px 0;
   margin:0;
   .span3 {
     float:right;
@@ -109,25 +110,17 @@ header {
   }
 }
 
-#main {
-  // border-top:1px solid rgba(255,255,255,.15);
-}
-
 .row {margin:15px 0 0;}
 
-.nav {
-  border-bottom:1px solid rgba(193, 197, 183, 0.4);
-  padding:10px 0;
-  margin:0;
-}
-
+.content.home .meat_and_potatoes {padding:0 5px;}
 .content {
   margin:0;
   padding:15px 0 0;
-  // border-bottom:1px solid rgba(255,255,255,0.60);
+
+  // The main focus section on the home page
   .hero-unit {
     padding:30px 40px;
-    margin-bottom:15px;
+    margin-bottom:20px;
     background:rgba(255,255,255,0.3);
     border:1px solid rgba(193, 197, 183, 0.65);
     -moz-box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.15), -1px -1px 0 rgba(255,255,255,.15), 0 1px 0 rgba(255, 255, 255, 0.15);
@@ -146,7 +139,7 @@ header {
       }
     }
     .btn-inverse {
-      margin-top:10px;
+      margin-top:5px;
       color:#fff;
       text-decoration:none;
     }
@@ -156,25 +149,33 @@ header {
     }
   }
 
+  // The main section of content beyond the hero-unit
   .meat_and_potatoes {
+    // Handles each of the sections within meat and taters
     .login_form, .register_form, .vote_form, .vote_results, .about {
       float:left;
       width:33%;
       padding:10px 0;
       form, aside {
         padding:10px 20px;
-        border-top:1px solid #eee;
+        border-top:1px solid rgba(255,255,255,.35);
       }
       aside {
         padding-top:15px;
       }
     }
+
+    // The login and voting forms on the home page
     .login_form, .vote_form {
       background:rgba(149,59,57,.1);
       border:1px solid rgba(149, 59, 57, .1);
     }
-    .vote_results {
-      float:right;
+
+    // The voting results area on the home page
+    .vote_results, .chat {
+      float:left;
+      padding:11px 0;
+      margin:0 10px;
       min-height:250px;
       ul {
         margin:10px 0;
@@ -185,6 +186,8 @@ header {
         }
       }
     }
+
+    // Handles the registration form and static about page
     .register_form, .about {
       width:100%;
       float:none;
@@ -197,6 +200,8 @@ header {
         padding:15px 30px;
       }
     }
+
+    // Specific to the static about page
     .about {
       float:left;
       h3 {
@@ -219,6 +224,7 @@ header {
   }
 }
 
+// The footer/branding section
 footer {
   margin-top:25px;
   clear:both;
@@ -228,20 +234,31 @@ footer {
     url('/images/megalithic_footer_updated-flipped.png');
   background-repeat: no-repeat;
   background-size: 100% 15px, auto auto;
-  background-position:0 0, 50% 0;
+  background-position:0 0, 30px 0;
   height:100%;
   border-top:1px solid rgba(255,255,255,0.5);
   .megalithic_footer {
     border-top:1px solid rgba(193, 197, 183, 0.85);
-    padding:85px 0 0;
+    padding:0 30px 0 175px;
+    overflow:auto;
     .copyright {
-      text-align:center;
+      text-align:left;
+      height:80px;
+      padding-top:20px;
+      vertical-align:middle;
       color:rgba(149, 59, 57, .35);
       text-shadow:1px 1px 0px rgba(255,255,225,0.5);
+      float:left;
+    }
+    .sundries {
+      text-align:right;
+      color:#888;
+      padding-top:30px;
     }
   }
 }
 
+// General styles for forms (potentially overriding/fixing twitter bootstrap form issues when used with twitter_bootstrap_form_for and bootstrap-sass-rails)
 fieldset {
   legend {
     font-size:100%;
@@ -261,6 +278,7 @@ fieldset {
   }
 }
 
+// More form related styles, specific to button actions
 .actions {
   margin:10px 0;
 }
