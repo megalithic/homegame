@@ -8,6 +8,7 @@
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
 #  week_number   :integer
+#  is_playing    :boolean         default(FALSE)
 #
 
 require 'spec_helper'

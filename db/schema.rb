@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219214727) do
+ActiveRecord::Schema.define(:version => 20120219214051) do
 
   create_table "games", :force => true do |t|
     t.integer  "vote_id"

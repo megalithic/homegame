@@ -1,20 +1,29 @@
 .vote_form
-  - if !player_voted?
+  - if !player_voted? && !is_playing?
     %h3 Get your vote in..
     = simple_form_for @vote, :html => {:role => "form"} do |f|
       = f.error_notification
       = f.input :selected_date, :required => false, :hint => 'foo', :collection => game_week_options
       = f.button :submit, "Vote!", :class => "btn btn-success"
-  - else
+  - elsif player_voted? && is_playing?
     %h3 Your seat has been reserved..
     %aside
       %p.important
-        Your vote is in for the week of
-        %em
-          = game_week_date
+        Your vote is in for the
+        %strong
+          %em
+            week of
+            = game_week_date
         %i.icon-arrow-right
-      %p
+      %p.well
         %i.icon-info-sign
-        <strong>Changed your mind and can't play?</strong><br />You can
-        = link_to 'remove your vote', {:controller => "votes", :action => "destroy", :method => "detete"}
+        <strong>Can't play this week?</strong><br />You can
+        remove your vote
+        // = link_to 'remove your vote', update_votes_path(@vote), :method => :put
         and seat reservation.
+  - else
+    %h3 Sorry you can't make it next week
+    %aside
+      %p.important
+        You voted and had a seat reserved, but decided to not play.
+      %p Be sure to vote again for the next game day!

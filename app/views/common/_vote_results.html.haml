@@ -4,7 +4,7 @@
     =game_week_date
 
   %aside
-    - unless player_voted?
+    - if !player_voted? && !is_playing?
       %p You want to play? Well then, <strong>pick a day!</strong>
 
     %h4
@@ -16,9 +16,18 @@
       %ul
         - @votes.each do |vote|
           %li{:id => vote.player_id == session[:player_id] ? "my_vote" : ""}
-            %i.icon-ok
-            - full_name = player_by_id(vote.player_id).full_name
-            = abbr_full_name(full_name) unless full_name.nil?
-            wants to play on
-            - date = vote.selected_date
-            = date.strftime("%A (%b. #{date.day.ordinalize})")
+            - if (vote.player_id == session[:player_id])
+              = link_to unvote_path(vote), :method => :put, :class => "icon" do
+                %i.icon-remove
+              = link_to unvote_path(vote), :method => :put, :rel => "tooltip", :title => "Remove my vote and sit out for this game" do
+                - full_name = player_by_id(vote.player_id).full_name
+                = abbr_full_name(full_name) unless full_name.nil?
+                wants to play on
+                = vote.selected_date.strftime("%A (%b. #{vote.selected_date.day.ordinalize})")
+            - else
+              %i.icon-ok
+              %span
+                - full_name = player_by_id(vote.player_id).full_name
+                = abbr_full_name(full_name) unless full_name.nil?
+                wants to play on
+                = vote.selected_date.strftime("%A (%b. #{vote.selected_date.day.ordinalize})")

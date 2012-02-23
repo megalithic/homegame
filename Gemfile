@@ -1,23 +1,26 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.2.1'
-gem 'sqlite3'                 #sqlite support
-# gem 'pg'                    #postgresql support
+gem 'pg'                    #postgresql support
 # gem 'mysql2'                #mysql support
 # gem 'mongo'                 #mongodb support
+
 gem 'rails-boilerplate'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'simple_form'
 gem 'twitter_bootstrap_form_for', :git => "https://github.com/tzeskimo/twitter_bootstrap_form_for.git"
 gem 'bootstrap-sass-rails'
 gem 'haml-rails'
+
 # gem 'whenever'          #cron util
 # gem 'geocoder'          #map and geocoding util
 # gem 'will_paginate'     #pagination gem
 # gem 'acts_as_api'       #api gem
+
 gem 'powder'              #handy gem for pow server
 gem 'knockout-rails', "~> 1.0.1"
-gem 'heroku'
+
+# gem 'heroku'
 # gem 'backbone-on-rails'     #backbone.js for rails
 
 group :assets do

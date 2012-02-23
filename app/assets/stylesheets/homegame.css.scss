@@ -113,7 +113,7 @@ header {
 
 .row {margin:15px 0 0;}
 
-.content.home .meat_and_potatoes {padding:0 5px;}
+.content.home .meat_and_potatoes {overflow:auto; padding:0 5px; margin:35px 0 10px;}
 .content {
   margin:0;
   padding:15px 0 0;
@@ -124,9 +124,9 @@ header {
     margin-bottom:20px;
     background:rgba(255,255,255,0.3);
     border:1px solid rgba(193, 197, 183, 0.65);
-    -moz-box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.15), -1px -1px 0 rgba(255,255,255,.15), 0 1px 0 rgba(255, 255, 255, 0.15);
-    -webkit-box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.15), -1px -1px 0 rgba(255,255,255,.15), 0 1px 0 rgba(255, 255, 255, 0.15);
-    box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.15), -1px -1px 0 rgba(255,255,255,.15), 0 1px 0 rgba(255, 255, 255, 0.15);
+    -moz-box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.2), -1px -1px 0 rgba(255,255,255,.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.2), -1px -1px 0 rgba(255,255,255,.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow:inset 0 0 30px rgba(0,0,0,.1), 1px -1px 0 rgba(255,255,255,.2), -1px -1px 0 rgba(255,255,255,.25), 0 1px 0 rgba(255, 255, 255, 0.2);
     h2 {
       margin-left:0;
       font-size:32px;
@@ -170,6 +170,14 @@ header {
     .login_form, .vote_form {
       background:rgba(149,59,57,.1);
       border:1px solid rgba(149, 59, 57, .1);
+      .well {
+        border:0;
+        margin-bottom:0;
+        background-color:rgba(255,255,255,1);
+        background-image:url('/images/separator.png'), url('/images/separator.png');
+        background-position: 0 0, 0 100%;
+        background-repeat:repeat-x;
+      }
     }
 
     // The voting results area on the home page
@@ -186,6 +194,20 @@ header {
         }
         #my_vote {
           color:rgba(149,59,57,1);
+          font-weight:bold;
+          a {
+            -webkit-transition:background-color .3s ease-in;
+            -moz-transition:background-color .3s ease-in;
+            -o-transition:background-color .3s ease-in;
+            transition:background-color .3s ease-in;
+          }
+          a:hover {
+            background:rgba(149,59,57,1);
+            color:#fff;
+          }
+          a.icon {
+            border:0;
+          }
         }
       }
     }

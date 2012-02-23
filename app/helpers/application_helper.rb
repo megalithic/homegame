@@ -5,9 +5,9 @@ module ApplicationHelper
   end
 
   def current_game_date
-    date = Date.current
-    date.next_week.beginning_of_week.to_formatted_s(:medium_ordinal)
-    #TODO: need to return the majority voted date
+    week_number = Date.current.next_week.strftime("%W")
+    date = Vote.first(:select => "distinct selected_date", :group => "selected_date", :conditions => ["week_number = ?", week_number], :order => "COUNT(selected_date) DESC", :limit => 1).selected_date
+    date.strftime("%A, %b #{date.day.ordinalize}")
   end
 
   def game_week_options

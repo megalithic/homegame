@@ -7,14 +7,10 @@
       %p
         <strong><em>Whoo buddy!</em></strong> It looks like we got ourselves a game for
         %span.label.label-important= current_game_date
-      %p
-        The
-        =current_player_count
-        should get ready to shuffle up and deal!
     -else
       %p
-        Unfortunately, <strong><em>no game so far</em></strong>; not enough folks have voted on a date for the week of
-        %strong= "#{game_week_date}."
+        Unfortunately, <strong><em>no game so far</em></strong>; not enough folks have voted on a date for the
+        %strong= "week of #{game_week_date}."
       %p
         <em>However</em>, there are still
         %strong= (10 - current_vote_count) unless current_vote_count >= 10
