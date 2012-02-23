@@ -7,27 +7,32 @@
     - if !player_voted? && !is_playing?
       %p You want to play? Well then, <strong>pick a day!</strong>
 
-    %h4
-      We're getting there,
-      =pluralize(@votes.count, 'person')
-      want to play:
+    - if current_vote_count > 0
+      %h4
+        We've got
+        =pluralize(current_vote_count, 'seat')
+        reserved so far:
+    - else
+      %h4
+        Be the first to reserve your seat.
 
     - unless !@votes.any?
       %ul
         - @votes.each do |vote|
           %li{:id => vote.player_id == session[:player_id] ? "my_vote" : ""}
-            - if (vote.player_id == session[:player_id])
-              = link_to unvote_path(vote), :method => :put, :class => "icon" do
-                %i.icon-remove
-              = link_to unvote_path(vote), :method => :put, :rel => "tooltip", :title => "Remove my vote and sit out for this game" do
-                - full_name = player_by_id(vote.player_id).full_name
-                = abbr_full_name(full_name) unless full_name.nil?
-                wants to play on
-                = vote.selected_date.strftime("%A (%b. #{vote.selected_date.day.ordinalize})")
-            - else
-              %i.icon-ok
-              %span
-                - full_name = player_by_id(vote.player_id).full_name
-                = abbr_full_name(full_name) unless full_name.nil?
-                wants to play on
-                = vote.selected_date.strftime("%A (%b. #{vote.selected_date.day.ordinalize})")
+            - unless current_vote_count < 1
+              - if (vote.player_id == session[:player_id])
+                = link_to unvote_path(vote), :method => :put, :class => "remove" do
+                  %i.icon-remove
+                = link_to unvote_path(vote), :method => :put, :rel => "tooltip", :title => "Sit out for this game" do
+                  - full_name = player_by_id(vote.player_id).full_name
+                  = abbr_full_name(full_name) unless full_name.nil?
+                  wants to play on
+                  = vote.selected_date.strftime("%A (%b. #{vote.selected_date.day.ordinalize})") unless vote.selected_date.nil?
+              - else
+                %i.icon-ok
+                %span
+                  - full_name = player_by_id(vote.player_id).full_name
+                  = abbr_full_name(full_name) unless full_name.nil?
+                  wants to play on
+                  = vote.selected_date.strftime("%A (%b. #{vote.selected_date.day.ordinalize})") unless vote.selected_date.nil?

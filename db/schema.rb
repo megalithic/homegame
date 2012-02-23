@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219214051) do
+ActiveRecord::Schema.define(:version => 20120223050406) do
 
   create_table "games", :force => true do |t|
     t.integer  "vote_id"
@@ -37,9 +37,10 @@ ActiveRecord::Schema.define(:version => 20120219214051) do
   create_table "votes", :force => true do |t|
     t.integer  "player_id"
     t.datetime "selected_date"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "week_number"
+    t.boolean  "is_playing",    :default => false
   end
 
 end

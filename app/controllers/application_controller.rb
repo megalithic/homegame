@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   def current_vote_count
     date = Date.current.next_week.strftime("%W")
-    votes_for_week = Vote.find_all_by_week_number(date) unless date.nil?
+    votes_for_week = Vote.all(:conditions => ["week_number = ? AND is_playing = true", date]) unless date.nil?
     votes_for_week.count
   end
 

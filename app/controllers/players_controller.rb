@@ -6,9 +6,10 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(params[:player])
     if @player.save
-      redirect_to root_url, :notice => "You're now registered, please log in below"
+      session[:player_id] = @player.id
+      redirect_to root_url, :notice => "You're now registered and logged in"
     else
-      render :partial => "common/register"
+      redirect_to register_path, :notice => "There was a problem getting you register, please give it another go"
     end
   end
 end
