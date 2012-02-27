@@ -17,6 +17,7 @@ gem 'haml-rails'
 # gem 'will_paginate'     #pagination gem
 # gem 'acts_as_api'       #api gem
 
+gem 'capistrano'
 gem 'powder'              #handy gem for pow server
 gem 'knockout-rails', "~> 1.0.1"
 
