@@ -38,8 +38,4 @@ class VotesController < ApplicationController
       end
     end
   end
-
-  def reset_is_playing(week_number)
-    Vote.update_all :is_playing => false, :conditions => ["week_number = ?", week_number]
-  end
 end

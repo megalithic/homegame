@@ -12,7 +12,7 @@ gem 'twitter_bootstrap_form_for', :git => "https://github.com/tzeskimo/twitter_b
 gem 'bootstrap-sass-rails'
 gem 'haml-rails'
 
-# gem 'whenever'          #cron util
+gem 'whenever', require: false          #cron util
 # gem 'geocoder'          #map and geocoding util
 # gem 'will_paginate'     #pagination gem
 # gem 'acts_as_api'       #api gem

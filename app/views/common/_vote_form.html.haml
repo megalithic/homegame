@@ -17,9 +17,10 @@
         %i.icon-arrow-right
       %p.well
         %i.icon-info-sign
-        <strong>Can't play on the majority voted day?</strong><br />You can
-        = link_to 'sit out', unvote_path(@current_player_vote), :method => :put
-        this time
+        <strong>Can't play on the majority voted day?</strong>
+        %span
+          You can
+          = link_to 'sit out this time', unvote_path(@current_player_vote), :method => :put
   - else
     %h3 Sorry you can't make it this time
     %aside

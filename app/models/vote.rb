@@ -34,4 +34,10 @@ class Vote < ActiveRecord::Base
       return false
     end
   end
+
+
+  def self.reset_is_playing
+    week_number = Date.current.next_week.strftime("%W")
+    Vote.update_all :is_playing => false, :conditions => ["week_number = ?", week_number]
+  end
 end

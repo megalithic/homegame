@@ -13,6 +13,9 @@ set :use_sudo, false
 
 require "bundler/capistrano"
 
+set :whenever_command, "bundle exec whenever"
+require 'whenever/capistrano'
+
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 ssh_options[:port] = 30000
@@ -22,11 +25,11 @@ role :app, domain # This may be the same as your `Web` server
 role :db, domain, :primary => true # This is where Rails migrations will run
 
 namespace :deploy do
-task :start do ; end
-task :stop do ; end
-task :restart, :roles => :app, :except => { :no_release => true } do
-run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-end
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
 end
 
 after "deploy:migrations", "deploy:cleanup"

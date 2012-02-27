@@ -1,2 +1,2 @@
 jQuery ->
-  $("input[type='text']:visible:first").focus()
+  $("input[type='text']:visible:first, select:visible:first").focus()
