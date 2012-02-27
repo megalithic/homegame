@@ -2,7 +2,7 @@
   %section.alert-block
     %a.close{:data => {:dismiss => "alert"}} &#215;
     - unless flash[:notice].blank?
-      .alert.alert-warning
+      .alert.alert-success
         = content_tag :div, flash[:notice]
 
     - unless flash[:error].blank?

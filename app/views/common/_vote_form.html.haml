@@ -2,8 +2,9 @@
   - if !player_voted? && !is_playing?
     %h3 Get your vote in..
     = twitter_bootstrap_form_for @vote, :html => {:role => "form"} do |f|
-      = f.select :selected_date, '', game_week_options, :required => true, :include_blank => true
-      = f.submit "Vote!", :class => "btn btn-success form-inline"
+      = f.inputs "Note: You're only allowed one vote per week." do
+        = f.select :selected_date, '', game_week_options, :required => true, :include_blank => true
+        = f.submit "Vote!", :class => "btn btn-success form-inline"
   - elsif player_voted? && is_playing?
     %h3 Your seat has been reserved..
     %aside

@@ -17,8 +17,10 @@ module ApplicationHelper
   def game_week_options
     date = Date.current
     start_date = date.next_week.beginning_of_week
-    end_date = date.next_week.end_of_week
-    start_date..end_date
+    end_date = date.next_week.end_of_week - 1 #drop Sunday from the list
+    (start_date..end_date).map {
+      |date| date.strftime("%A, %b #{date.day.ordinalize}")
+    }
 
     #TODO: need to format the output options text
   end
