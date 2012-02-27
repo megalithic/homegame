@@ -15,7 +15,7 @@ require "bundler/capistrano"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-ssh)options[:port] = 30000
+ssh_options[:port] = 30000
 
 role :web, domain # Your HTTP server, Apache/etc
 role :app, domain # This may be the same as your `Web` server
