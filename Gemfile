@@ -11,13 +11,12 @@ gem 'simple_form'
 gem 'twitter_bootstrap_form_for', :git => "https://github.com/tzeskimo/twitter_bootstrap_form_for.git"
 gem 'bootstrap-sass-rails'
 gem 'haml-rails'
-
+gem 'unicorn'
 gem 'whenever', require: false          #cron util
 # gem 'geocoder'          #map and geocoding util
 # gem 'will_paginate'     #pagination gem
 # gem 'acts_as_api'       #api gem
 
-gem 'capistrano'
 gem 'powder'              #handy gem for pow server
 gem 'knockout-rails', "~> 1.0.1"
 
@@ -33,6 +32,7 @@ end
 gem 'jquery-rails'
 
 group :development do
+  gem 'capistrano'
   gem 'rspec-rails'
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
   # gem 'ruby-debug19', :require => 'ruby-debug'
